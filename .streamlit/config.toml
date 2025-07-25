@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#19277f"         # Color principal (por ejemplo, botones)
+backgroundColor = "#f0f2f6"      # Fondo general
+secondaryBackgroundColor = "#ffffff"  # Fondo de los contenedores
+textColor = "#000000"            # Color del texto
+font = "sans serif"              # Fuente: "sans serif", "serif", o "monospace"
