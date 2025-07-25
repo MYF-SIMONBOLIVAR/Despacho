@@ -4,7 +4,8 @@ from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 import pytz
 from mensajeros import lista_mensajeros
-
+import json
+from io import StringIO
 
 # zona horaria de Colombia
 colombia = pytz.timezone("America/Bogota")
@@ -12,7 +13,8 @@ colombia = pytz.timezone("America/Bogota")
 # Conexión a Google Sheets
 def conectar_google_sheet():
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    credentials = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+    google_credentials = json.loads(st.secrets["GOOGLE_CREDENTIALS"])
+    credentials = ServiceAccountCredentials.from_json_keyfile_dict(google_credentials, scope)
     client = gspread.authorize(credentials)
     sheet = client.open("registro_despacho").sheet1
     return sheet
