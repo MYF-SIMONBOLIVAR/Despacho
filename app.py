@@ -60,7 +60,7 @@ if registrar_despacho:
         else:
             hora_despacho = datetime.now(colombia).strftime("%Y-%m-%d %H:%M:%S")
             sheet.append_row([codigo, mensajero, hora_despacho, "", ""])
-            alerta = st.success(f"✅ Despacho registrado exitosamente para el código {codigo} con {mensajero}.")
+            alerta = st.success(f"✅ Despacho registrado exitosamente para el código {codigo} con el mensajero {mensajero}.")
     else:
         alerta = st.error("❌ Por favor, ingrese el código y seleccione un mensajero.")
 
